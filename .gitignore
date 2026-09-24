@@ -1,0 +1,15 @@
+.env
+.env.*
+*.sqlite
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+credentials/
+data/
+node_modules/
+dist/
+build/
+*.egg-info/
+.vercel/
+.render/
