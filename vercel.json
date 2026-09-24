@@ -1,9 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "name": "easyfind-frontend",
-  "framework": "other",
-  "buildCommand": "echo 'Static site - no build needed'",
-  "outputDirectory": "src/job_hunter/web_assets",
+  "framework": "vite",
+  "buildCommand": "cp -r src/job_hunter/web_assets/* dist/",
+  "outputDirectory": "dist",
   "devCommand": "npx serve src/job_hunter/web_assets -p 8787",
   "installCommand": "npm install",
   "rewrites": [
