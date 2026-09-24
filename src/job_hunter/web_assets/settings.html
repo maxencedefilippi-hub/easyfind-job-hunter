@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EasyFind — Paramétrage</title>
+    <link rel="stylesheet" href="/static/app.css?v=4" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">EF</div>
+          <div>
+            <h1>EasyFind</h1>
+            <p>CRM de prise de contact</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="/index.html">Accueil</a>
+          <a href="/settings.html" class="active">Paramétrage</a>
+        </nav>
+        <div class="side-note">
+          <span class="dot"></span>
+          Brouillons internes, envoi manuel
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="topbar" id="settings-top">
+          <div>
+            <h2>Paramétrage</h2>
+            <p style="color: var(--text-muted); margin-top: 4px;">Connexions, Prompts IA & Paramètres de recherche</p>
+          </div>
+          <div class="top-actions">
+            <a href="/index.html" class="btn-secondary">← Retour au dashboard</a>
+          </div>
+        </section>
+
+        <section class="panel settings-panel" id="settings">
+          <div id="settingsContent"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/app.js?v=13"></script>
+  </body>
+</html>

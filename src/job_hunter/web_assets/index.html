@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EasyFind</title>
+    <link rel="stylesheet" href="/static/app.css?v=9" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="/static/app.js?v=9"></script>
+    <script>
+      // Au chargement, vérifier si l'utilisateur est connecté
+      document.addEventListener('DOMContentLoaded', async () => {
+        const token = localStorage.getItem('sb-access-token');
+        const userId = localStorage.getItem('sb-user-id');
+        
+        if (!token || !userId) {
+          // Aucun token -> laisser app.js afficher l'écran de connexion
+          console.log('No auth token - show login screen');
+        } else {
+          // Token présent -> valider
+          try {
+            const res = await fetch('http://127.0.0.1:8000/api/health', {
+              headers: { 'Authorization': `Bearer ${token}` }
+            });
+            if (!res.ok) {
+              localStorage.removeItem('sb-access-token');
+              localStorage.removeItem('sb-user-id');
+            }
+          } catch (e) {
+            console.error('Auth check error:', e);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
