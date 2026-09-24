@@ -1,0 +1,16 @@
+{
+  "name": "easyfind-frontend",
+  "version": "1.0.0",
+  "description": "EasyFind Job Hunter Frontend",
+  "scripts": {
+    "dev": "npx serve src/job_hunter/web_assets -p 8787",
+    "build": "echo 'Static site - no build needed'",
+    "start": "npx serve src/job_hunter/web_assets -p $PORT"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

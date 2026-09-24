@@ -1,0 +1,38 @@
+# Render Blueprint for EasyFind Backend
+# Deploy: https://render.com/deploy?repo=https://github.com/your-org/job-hunter-auto
+
+services:
+  - type: web
+    name: easyfind-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: ENCRYPTION_KEY
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_REDIRECT_URI
+        value: https://easyfind-api.onrender.com/auth/callback
+      - key: SERPAPI_SHARED_KEY
+        sync: false
+      - key: APP_ENV
+        value: production
+      - key: FRONTEND_URL
+        value: https://easyfind.your-domain.com
+      - key: SCHEDULER_ENABLED
+        value: "true"
+    healthCheckPath: /health
+    autoDeploy: true
+
+databases:
+  - name: easyfind-supabase
+    # Note: Supabase is external, this is just for reference
+    # Actual PostgreSQL is managed by Supabase
